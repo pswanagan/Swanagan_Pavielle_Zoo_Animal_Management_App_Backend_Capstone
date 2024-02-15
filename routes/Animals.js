@@ -1,7 +1,7 @@
 const { Router } = require('express')
 const router = Router()
 // Grab the controller functions
-const { index, create, destroy } = require('../controllers/animalCtrl');
+const { index, create, destroy, modify } = require('../controllers/animalCtrl');
 
 http://localhost:5050/animals
 
@@ -13,6 +13,9 @@ router.post('/', create);
 
 // Delete an animal
 router.delete('/:id', destroy);
+
+//Update an animal
+router.modify('/:id', modify)
 
 
 module.exports = router

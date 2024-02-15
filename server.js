@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 8000
 const cors = require("cors")
 // Requiring example router
 const animals = require('./routes/Animals')
-
+const keepers = require('./routes/Keepers')
 
 
 
@@ -22,7 +22,7 @@ app.use(cors());
 
 // Connecting the router to the server
 app.use('/animals', animals)
-
+app.use('/keepers', keepers)
 
 // Calling the listen function telling the server to listen on port 3000
 app.listen(PORT, () => {
