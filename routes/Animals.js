@@ -15,7 +15,7 @@ router.post('/', create);
 router.delete('/:id', destroy);
 
 //Update an animal
-router.modify('/:id', modify)
+router.patch('/:id', modify)
 
 
 module.exports = router

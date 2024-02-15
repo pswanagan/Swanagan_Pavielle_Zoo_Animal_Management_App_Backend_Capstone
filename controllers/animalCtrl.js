@@ -60,5 +60,5 @@ module.exports = {
   index,
   create,
   destroy,
-  modify
+  modify,
 };
