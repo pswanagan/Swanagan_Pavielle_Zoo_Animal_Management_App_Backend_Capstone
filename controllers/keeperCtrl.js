@@ -15,6 +15,19 @@ async function index(req, res) {
     }
   }
 
+  async function findIndex(req, res) {
+    try {
+      const keeper = await Keeper.find({e_id: req.params.id});
+      if (keeper.length > 0) {
+        res.status(200).send(keeper);
+      } else {
+        res.status(404).send("No keeper found");
+      }
+    } catch (err) {
+      res.status(400).send(err);
+    }
+  }
+
   async function create(req, res) {
     try {
       // req.body will have the info that the user filled out on the frontend
@@ -69,5 +82,6 @@ module.exports = {
   index,
   create,
   destroy,
-  modify
+  modify,
+  findIndex
 };

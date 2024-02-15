@@ -16,6 +16,19 @@ async function index(req, res) {
   }
 }
 
+async function findIndex(req, res) {
+  try {
+    const animal = await Animal.find({ animal_id: req.params.id});
+    if (animals.length > 0) {
+      res.status(200).send(animal);
+    } else {
+      res.status(404).send("No animal found");
+    }
+  } catch (err) {
+    res.status(500).send("Internal server error");
+  }
+}
+
 async function create(req, res) {
   try {
     const createdAnimal = await Animal.create(req.body);
@@ -37,7 +50,7 @@ async function create(req, res) {
 async function modify(req, res) {
   try {
     const modifiedAnimal = await Animal.findOneAndUpdate(
-      { e_id: req.params.id }, // Using e_id
+      { animal_id: req.params.id }, // Using e_id
       req.body,
       { new: true } // Returns the modified document
     );
@@ -70,4 +83,5 @@ module.exports = {
   create,
   destroy,
   modify,
+  findIndex
 };
