@@ -21,7 +21,7 @@ app.use(cors());
 
 
 // Connecting the router to the server
-app.use('/', animals)
+app.use('/animals', animals)
 
 
 // Calling the listen function telling the server to listen on port 3000

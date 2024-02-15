@@ -1,5 +1,5 @@
 
-const Animal = require('../models/animal')
+const Animal = require('../models/animals')
 
 
 
