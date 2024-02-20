@@ -19,7 +19,7 @@ async function index(req, res) {
 async function findIndex(req, res) {
   try {
     const animal = await Animal.find({ animal_id: req.params.id});
-    if (animals.length > 0) {
+    if (animal.length > 0) {
       res.status(200).send(animal);
     } else {
       res.status(404).send("No animal found");

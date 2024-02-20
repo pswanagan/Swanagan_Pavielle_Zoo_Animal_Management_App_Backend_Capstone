@@ -12,7 +12,6 @@ const keeperSchema = Schema({
       zip: String
     },
     phone: String,
-    password: String,
     animals: [String]
   });
 
