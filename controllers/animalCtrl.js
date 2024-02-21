@@ -67,7 +67,7 @@ async function modify(req, res) {
 
 async function destroy(req, res) {
   try {
-    const deletedAnimal = await Animal.findOneAndDelete({ e_id: req.params.id });
+    const deletedAnimal = await Animal.findOneAndDelete({ animal_id: req.params.id });
     if (deletedAnimal) {
       res.status(204).send();
     } else {
